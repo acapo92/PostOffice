@@ -1,5 +1,6 @@
 package PostOffice.Forms;
 
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,7 +31,8 @@ public class Login extends PostOfficePanel {
 	 */
 	public Login(PanelNavigator navigator) {
 		super(NAME, navigator);
-
+			
+		
 		authenticationService = new AuthenticationService();
 
 		setToolTipText("Login");

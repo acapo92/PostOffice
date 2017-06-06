@@ -36,15 +36,36 @@ public class Home extends PostOfficePanel {
 
 			}
 		});
+
 		add(btn);
+
+		JButton btnPostEpress = new JButton("PostExpress");
+		btnPostEpress.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				try {
+					navigator.navigateTo(getName(), PostExpress.NAME, null, null);
+				} catch (Exception e1) {
+					System.out.println(e1.getMessage());
+					System.exit(1);
+				}
+
+			}
+		});
+
+		add(btnPostEpress);
 
 	}
 
 	@Override
 	public void init(Object arg) {
-		User user = (User) arg;
-		System.out.println("Home.init");
-		btn.setText(user.getUsername());
+		if (arg != null) {
+			User user = (User) arg;
+			System.out.println("Home.init");
+		}
+
 	}
 
 	@Override

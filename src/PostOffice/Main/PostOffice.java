@@ -6,9 +6,11 @@ import javax.swing.JFrame;
 
 import PostOffice.Forms.Home;
 import PostOffice.Forms.Login;
+import PostOffice.Forms.PostExpress;
 import PostOffice.Forms.PostOfficePanel;
 
 import java.awt.CardLayout;
+import java.awt.Dimension;
 
 public class PostOffice {
 
@@ -46,15 +48,18 @@ public class PostOffice {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 600, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
+		//frame.setPreferredSize(new Dimension(400, 600));
 
 		Login login = new Login(navigator);
 		Home home = new Home(navigator);
+		PostExpress postExpress = new PostExpress(navigator);
 
 		addFrame(login);
 		addFrame(home);
+		addFrame(postExpress);
 	}
 
 	private void addFrame(PostOfficePanel panel) {
